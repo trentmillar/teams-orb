@@ -1,13 +1,13 @@
-description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+description: Simple usage
+
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    teams: trentmillar/teams-orb@0.0.1
   workflows:
-    use-my-orb:
+    build:
       jobs:
-        - <orb-name>/<job-name>
+        - teams/report:
+            webhook_url: "https://webhook_url"
+            only_on_fail: true
+            additional_details: "Add some text"
