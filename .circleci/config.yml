@@ -22,7 +22,6 @@ parameters:
     type: string
     default: "dev:alpha"
 
-
 jobs:
   # Define one or more jobs which will utilize your orb's commands and parameters to validate your changes.
   integration-test-1:
@@ -48,7 +47,7 @@ workflows:
           requires:
             - orb-tools/lint
             - orb-tools/pack
-            - bats/run
+            #- bats/run
             - shellcheck/check
       # Publish development version(s) of the orb.
       - orb-tools/publish-dev:
