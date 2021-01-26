@@ -4,7 +4,7 @@ orbs:
   # Replace this with your own!
   teams-orb: trentmillar/teams-orb@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@10.0
-  # bats: circleci/bats@1.0
+  bats: circleci/bats@1.0
   shellcheck: circleci/shellcheck@2.0
 
 # Pipeline Parameters
@@ -70,7 +70,7 @@ workflows:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       # Run any integration tests defined within the `jobs` key.
-      - integration-test-1
+      # - integration-test-1
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
       # as that will determine whether a patch, minor or major
